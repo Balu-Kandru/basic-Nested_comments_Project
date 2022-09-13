@@ -38,7 +38,7 @@ const Comments = ({currentUserId }) => {
     getCommentsApi().then((data) => {
       setBackendComments(data);
     });
-    fetch("http://localhost:3001/content/history", {
+    fetch("https://publish-content-serverart.herokuapp.com/content/history", {
             headers: {
                 authorization: authToken
             }
@@ -89,7 +89,7 @@ const Comments = ({currentUserId }) => {
         </div>
          :
             <section>
-                <div>No history</div>
+                <div>Data not created</div>
                 <Link to="/create">create one</Link>
             </section>
     }

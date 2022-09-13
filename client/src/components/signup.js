@@ -16,14 +16,14 @@ const Signup = ()=> {
         }else{
             //console.log(signupState);
             axios({
-                url: "http://localhost:3001/signup",
+                url: "https://publish-content-serverart.herokuapp.com/signup",
                 method: "POST",
                 headers: {
                 },
                 data: signupState
             }).then((res)=> {
                 alert(res.data)
-                navigate("/login")
+                navigate("/")
             }).catch((err)=> {
                 //console.log(err)
                 alert(err.response.data)
