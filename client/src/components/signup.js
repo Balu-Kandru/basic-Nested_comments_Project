@@ -14,9 +14,8 @@ const Signup = ()=> {
         if(signupState.username.length===0 || signupState.password.length===0){
             alert("please enter all the fields")
         }else{
-            //console.log(signupState);
             axios({
-                url: "https://publish-content-serverart.herokuapp.com/signup",
+                url: `${baseUrl}/signup`,
                 method: "POST",
                 headers: {
                 },
@@ -25,7 +24,6 @@ const Signup = ()=> {
                 alert(res.data)
                 navigate("/")
             }).catch((err)=> {
-                //console.log(err)
                 alert(err.response.data)
             })
         }

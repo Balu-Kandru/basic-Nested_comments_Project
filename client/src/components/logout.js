@@ -1,13 +1,13 @@
-import {useNavigate} from "react-router-dom";
-const Logout = ()=> {
+import { useNavigate } from "react-router-dom";
+const Logout = () => {
     const navigate = useNavigate();
-    const handleLogout = ()=> {
+    const handleLogout = () => {
         localStorage.setItem("authorization", "");
         navigate("/");
     }
     return (
         <>
-        <button onClick={handleLogout}>Logout</button>
+            <button onClick={handleLogout}>Logout</button>
         </>
     )
 }

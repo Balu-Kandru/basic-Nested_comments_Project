@@ -38,13 +38,12 @@ const Comments = ({currentUserId }) => {
     getCommentsApi().then((data) => {
       setBackendComments(data);
     });
-    fetch("https://publish-content-serverart.herokuapp.com/content/history", {
+    fetch(`${baseUrl}/content/history`, {
             headers: {
                 authorization: authToken
             }
         }).then((res)=>res.json()).then((data)=> {
             setData(data)
-            //console.log(data)
         })
   }, []);
 

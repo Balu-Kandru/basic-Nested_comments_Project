@@ -7,7 +7,7 @@ function History(){
     const authToken = localStorage.getItem("authorization");
     const [Data, setData] = useState([]);
     useEffect(()=> {
-        fetch("https://publish-content-serverart.herokuapp.com/content/history", {
+        fetch(`${baseUrl}/content/history`, {
             headers: {
                 authorization: authToken
             }

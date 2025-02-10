@@ -1,13 +1,10 @@
 import CommentForm from "./commentform";
 
 const Comment = ({
-  comment,
-  replies,
-  setActiveComment,
-  activeComment,
-  addComment,
-  parentId = null,
-  currentUserId,
+  comment, replies,
+  setActiveComment, activeComment,
+  addComment, parentId = null,
+  currentUserId
 }) => {
   const isReplying = activeComment && activeComment.id === comment.id && activeComment.type === "replying";
   const canReply = true

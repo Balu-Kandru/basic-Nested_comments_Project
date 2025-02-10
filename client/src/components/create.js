@@ -10,7 +10,7 @@ function Create(){
             alert("please enter details")
         }else{
             axios({
-                url: "https://publish-content-serverart.herokuapp.com/content/create",
+                url: `${baseUrl}/content/create`,
                 method: "POST",
                 headers: {
                     authorization: authToken
