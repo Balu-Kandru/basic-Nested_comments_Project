@@ -25,8 +25,8 @@
     Navigate to both client and server folders and run:
    ```bash
     npm install
-3. **Set up environment variables in server**
 
+3. **Set up environment variables in server**
     ```bash
     DB_URL=<YOUR_DB_URL>
     SECRET_KEY=<SECRET_KEY>
@@ -37,7 +37,6 @@
     BASE_URL=<SERVER_URL>
 
 5. **Run the server**
-
     ```bash
     cd server
     npm start 
