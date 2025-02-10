@@ -3,6 +3,7 @@ const signupModal=require("../model/usersignup")
 const {checkExistingUser, generatePasswordHash} = require("../utilities");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
+const { secretKey } = require("../utilities")
 
 const router = express.Router();
 
@@ -11,7 +12,7 @@ router.post("/login", (req, res)=> {
         if(userData.length) {
             bcrypt.compare(req.body.password, userData[0].password).then((val)=> {
                 if(val) {
-                    const authToken = jwt.sign(userData[0].username, process.env.SECRET_KEY);
+                    const authToken = jwt.sign(userData[0].username, secretKey);
                     res.status(200).send({authToken});
                 } else {
                     res.status(400).send("Invalid Password");
